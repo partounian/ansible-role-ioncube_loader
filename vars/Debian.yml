@@ -11,7 +11,7 @@ __php_ioncube_loader_config_filename: 10-ioncube.ini
 
 __webserver_process_name: "{{ webserver_process_name | default('nginx') }}"
 
-__php_process_name: "{{ php_process_name | default('php7.3-fpm') }}"
+__php_process_name: "{{ php_process_name | default('php-fpm') }}"
 
 __php_extension_conf_paths:
   - "/etc/php/{{ __php_version }}/fpm/conf.d"
