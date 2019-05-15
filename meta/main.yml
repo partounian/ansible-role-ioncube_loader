@@ -1,9 +1,6 @@
 ---
 # meta/main.yml
 
-dependencies:
-  - geerlingguy.php
-
 galaxy_info:
   role_name: ioncube_loader
   author: Akman
