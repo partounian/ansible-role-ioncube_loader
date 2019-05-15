@@ -1,7 +1,7 @@
 ---
 # vars/Debian.yml
 
-__php_version: "{{ php_version | default('7.2') }}"
+__php_version: "{{ php_version | default('7.3') }}"
 
 __php_ioncube_loader_module_path: "/usr/lib/php/{{ __php_version }}/modules"
 
@@ -9,11 +9,14 @@ __php_ioncube_loader_module_filename: "ioncube_loader_lin_{{ __php_version }}.so
 
 __php_ioncube_loader_config_filename: 10-ioncube.ini
 
+__webserver_process_name: "{{ webserver_process_name | default('nginx') }}"
+
+__php_process_name: "{{ php_process_name | default('php7.3-fpm') }}"
+
 __php_extension_conf_paths:
   - "/etc/php/{{ __php_version }}/fpm/conf.d"
-  - "/etc/php/{{ __php_version }}/apache2/conf.d"
   - "/etc/php/{{ __php_version }}/cli/conf.d"
   
 handlers:
-  - "restart {{ webserver_process_name }}"
-  - "restart {{ php_process_name }}"
+  - "restart {{ __webserver_process_name }}"
+  - "restart {{ __php_process_name }}"
