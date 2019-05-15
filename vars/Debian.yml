@@ -18,5 +18,5 @@ __php_extension_conf_paths:
   - "/etc/php/{{ __php_version }}/cli/conf.d"
   
 handlers:
-  - "restart {{ __webserver_process_name }}"
+  - "reload {{ __webserver_process_name }}"
   - "restart {{ __php_process_name }}"
